@@ -2,9 +2,9 @@
   "name": "dom-element-path",
   "version": "1.0.0",
   "description": "Get unique dom element path for specified element.",
-  "main": "dom-element-path.js",
+  "main": "src/dom-element-path.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint ./src/",
     "test": "jest"
   },
   "author": "zypox",

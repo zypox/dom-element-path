@@ -48,10 +48,10 @@ const buildPathString = (parents) => {
   return pathArr.join(' > ');
 };
 
-const domElementPath = element => {
+const domElementPath = (element) => {
   if (!(element instanceof HTMLElement)) {
-    throw "element must be of type `HTMLElement`.";
-  };
+    throw new Error('element must be of type `HTMLElement`.');
+  }
 
   return buildPathString(parentElements(element));
 };

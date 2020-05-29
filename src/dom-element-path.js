@@ -38,12 +38,12 @@ const nthSelectorNeeded = (selector, path) => {
 const buildPathString = (parents) => {
   const pathArr = [];
 
-  for (const parent of parents) {
+  parents.forEach((parent) => {
     if (nthSelectorNeeded(parent.selector, pathArr.join(' > '))) {
       parent.selector += `:nth-of-type(${nthElement(parent.element)})`;
     }
     pathArr.push(parent.selector);
-  }
+  });
 
   return pathArr.join(' > ');
 };

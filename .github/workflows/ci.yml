@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: install-dependencies
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - name: lint
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: lint
+      - name: test
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: test

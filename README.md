@@ -1,3 +1,5 @@
+![lint](https://github.com/zypox/print-api/workflows/lint/badge.svg)
+
 # dom-element-path
 
 Get unique dom element path for specified element.

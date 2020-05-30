@@ -2,14 +2,25 @@
   "name": "dom-element-path",
   "version": "1.0.0",
   "description": "Get unique dom element path for specified element.",
-  "main": "src/dom-element-path.js",
+  "main": "dist/dom-element-path.js",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "lint": "eslint ./src/",
     "test": "jest ./src/",
     "build": "babel src -d dist --ignore '**/*.test.js'"
   },
   "author": "zypox",
+  "repository": "https://github.com/zypox/dom-element-path.git",
   "license": "MIT",
+  "keywords": [
+    "path",
+    "element path",
+    "css path",
+    "dom element path",
+    "selector path"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.1",

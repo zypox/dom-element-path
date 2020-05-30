@@ -1,4 +1,4 @@
-![lint](https://github.com/zypox/print-api/workflows/lint/badge.svg)
+![lint](https://github.com/zypox/dom-element-path/workflows/ci/badge.svg)
 
 # dom-element-path
 
@@ -19,7 +19,7 @@ Output:
 html > body
 ```
 
-One of the common use cases is where you have event in some sort of event handler:
+One of the common use cases is where you have event in some sort of event handler and want to get path of element that the event was fired off:
 
 ```javascript
 import domElementPath from './dom-element-path';

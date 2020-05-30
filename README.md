@@ -4,6 +4,19 @@
 
 Get unique dom element path for specified element.
 
+# Installation
+
+
+npm:
+```
+npm install dom-element-path
+```
+
+yarn:
+```
+yarn add dom-element-path
+```
+
 # Usage
 
 ```javascript
@@ -34,4 +47,21 @@ Output:
 
 ```
 html > header > div.header-menu > ul > li:nth-of-type(4) > a.login-button
+```
+
+# Development
+
+run linter:
+```
+yarn lint
+```
+
+run tests:
+```
+yarn test
+```
+
+create build:
+```
+yarn build
 ```

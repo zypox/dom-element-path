@@ -5,11 +5,13 @@
   "main": "src/dom-element-path.js",
   "scripts": {
     "lint": "eslint ./src/",
-    "test": "jest"
+    "test": "jest ./src/",
+    "build": "babel src -d dist --ignore '**/*.test.js'"
   },
   "author": "zypox",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.1",
     "@babel/preset-env": "^7.10.1",
     "babel-eslint": "^10.1.0",

@@ -20,9 +20,9 @@ yarn add dom-element-path
 # Usage
 
 ```javascript
-import domElementPath from './dom-element-path';
+import domElementPath from 'dom-element-path';
 
-let body = domElementPath(document.body);
+const body = domElementPath(document.body);
 console.log(body);
 ```
 
@@ -35,10 +35,10 @@ html > body
 One of the common use cases is where you have event in some sort of event handler and want to get path of element that the event was fired off:
 
 ```javascript
-import domElementPath from './dom-element-path';
+import domElementPath from 'dom-element-path';
 
-onClick(event) {
-    let clickedElementPath = domElementPath(event.target);
+const onClick = event => {
+    const clickedElementPath = domElementPath(event.target);
     console.log(clickedElementPath);
 };
 ```

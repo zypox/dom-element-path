@@ -18,7 +18,7 @@ const parentElements = (element) => {
 
 const nthElement = (element) => {
   let c = element;
-  let nth = 0;
+  let nth = 1;
   while (c.previousElementSibling !== null) {
     if (c.nodeName === element.nodeName) {
       nth++;

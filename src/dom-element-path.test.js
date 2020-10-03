@@ -71,7 +71,7 @@ describe('domElementPath', () => {
 
     const result = domElementPath(div1);
 
-    expect(result).toBe('html > body > div:nth-of-type(0)');
+    expect(result).toBe('html > body > div:nth-of-type(1)');
   });
 
   test('it should add nth-of-type selector to same elements with same class of same parent', () => {
@@ -85,7 +85,7 @@ describe('domElementPath', () => {
 
     const result = domElementPath(div2);
 
-    expect(result).toBe('html > body > div.a.b:nth-of-type(1)');
+    expect(result).toBe('html > body > div.a.b:nth-of-type(2)');
   });
 
   test('it should not add nth-of-type selector to different elements with same class of same parent', () => {

@@ -20,7 +20,7 @@ const nthElement = (element) => {
   let c = element;
   let nth = 1;
   while (c.previousElementSibling !== null) {
-    if (c.nodeName === element.nodeName) {
+    if (c.previousElementSibling.nodeName === element.nodeName) {
       nth++;
     }
     c = c.previousElementSibling;

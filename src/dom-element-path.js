@@ -3,7 +3,11 @@ const parentElements = (element) => {
   while (element) {
     const tagName = element.nodeName.toLowerCase();
     const cssId = element.id ? `#${element.id}` : '';
-    const cssClass = element.className ? `.${element.className.replace(/\s+/g, '.')}` : '';
+    let cssClass = '';
+    if (element.className && typeof element.className === 'string') {
+      // escape class names
+      cssClass = `.${element.className.replace(/\s+/g, '.').replace(/[:*+?^${}()|[\]\\]/gi, '\\$&')}`;
+    }
 
     parents.unshift({
       element,
@@ -20,7 +24,7 @@ const nthElement = (element) => {
   let c = element;
   let nth = 1;
   while (c.previousElementSibling !== null) {
-    if (c.nodeName === element.nodeName) {
+    if (c.previousElementSibling.nodeName === element.nodeName) {
       nth++;
     }
     c = c.previousElementSibling;

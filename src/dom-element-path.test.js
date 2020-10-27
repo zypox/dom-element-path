@@ -88,6 +88,22 @@ describe('domElementPath', () => {
     expect(result).toBe('html > body > div.a.b:nth-of-type(2)');
   });
 
+  test('it should add nth-of-type selector to same elements without using the incorrect nth-of-type increment', () => {
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+    const p1 = document.createElement('p');
+    const p2 = document.createElement('p');
+
+    document.body.appendChild(div1);
+    document.body.appendChild(div2);
+    document.body.appendChild(p1);
+    document.body.appendChild(p2);
+
+    const result = domElementPath(p1);
+
+    expect(result).toBe('html > body > p:nth-of-type(1)');
+  });
+
   test('it should not add nth-of-type selector to different elements with same class of same parent', () => {
     const div = document.createElement('div');
     div.setAttribute('class', 'a b');
@@ -128,5 +144,16 @@ describe('domElementPath', () => {
     const result = domElementPath(div1);
 
     expect(result).toBe('html > body > div#some-id.a.b');
+  });
+
+  test('it should escape class names', () => {
+    const div1 = document.createElement('div');
+    div1.setAttribute('class', 'a:b');
+
+    document.body.appendChild(div1);
+
+    const result = domElementPath(div1);
+
+    expect(result).toBe('html > body > div.a\\:b');
   });
 });

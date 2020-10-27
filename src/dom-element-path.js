@@ -3,7 +3,11 @@ const parentElements = (element) => {
   while (element) {
     const tagName = element.nodeName.toLowerCase();
     const cssId = element.id ? `#${element.id}` : '';
-    const cssClass = element.className ? `.${element.className.replace(/\s+/g, '.')}` : '';
+    let cssClass = '';
+    if (element.className && typeof element.className === 'string') {
+      // escape class names
+      cssClass = `.${element.className.replace(/\s+/g, '.').replace(/[:*+?^${}()|[\]\\]/gi, '\\$&')}`;
+    }
 
     parents.unshift({
       element,

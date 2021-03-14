@@ -1,6 +1,6 @@
 {
   "name": "dom-element-path",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Get unique dom element path for specified element.",
   "main": "dist/dom-element-path.js",
   "files": [

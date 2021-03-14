@@ -1,6 +1,6 @@
 {
   "name": "dom-element-path",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Get unique dom element path for specified element.",
   "main": "dist/dom-element-path.js",
   "files": [
@@ -32,6 +32,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
-    "jest": "^26.0.1"
+    "jest": "^26.0.1",
+    "node-notifier": "^8.0.1"
   }
 }

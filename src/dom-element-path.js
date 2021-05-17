@@ -20,6 +20,8 @@ const parentElements = (element) => {
   return parents;
 };
 
+export { parentElements };
+
 const nthElement = (element) => {
   let c = element;
   let nth = 1;
@@ -32,6 +34,8 @@ const nthElement = (element) => {
 
   return nth;
 };
+
+export { nthElement };
 
 const nthSelectorNeeded = (selector, path) => {
   const querySelector = path === '' ? selector : `${path} > ${selector}`;

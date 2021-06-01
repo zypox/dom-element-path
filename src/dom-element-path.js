@@ -20,11 +20,13 @@ const parentElements = (element) => {
   return parents;
 };
 
-const nthElement = (element) => {
+export { parentElements };
+
+const nthElement = (element, sameType = true) => {
   let c = element;
   let nth = 1;
   while (c.previousElementSibling !== null) {
-    if (c.previousElementSibling.nodeName === element.nodeName) {
+    if (!sameType || c.previousElementSibling.nodeName === element.nodeName) {
       nth++;
     }
     c = c.previousElementSibling;
@@ -32,6 +34,8 @@ const nthElement = (element) => {
 
   return nth;
 };
+
+export { nthElement };
 
 const nthSelectorNeeded = (selector, path) => {
   const querySelector = path === '' ? selector : `${path} > ${selector}`;

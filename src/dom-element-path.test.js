@@ -156,4 +156,15 @@ describe('domElementPath', () => {
 
     expect(result).toBe('html > body > div.a\\:b');
   });
+
+  test('it should escape space effects', () => {
+      const div1 = document.createElement('div');
+      div1.setAttribute('class', 'a ');
+
+      document.body.appendChild(div1);
+
+      const result = domElementPath(div1);
+
+      expect(result).toBe('html > body > div.a');
+  });
 });

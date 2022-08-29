@@ -6,7 +6,10 @@ const parentElements = (element) => {
     let cssClass = '';
     if (element.className && typeof element.className === 'string') {
       // escape class names
-      cssClass = `.${element.className.replace(/\s+/g, '.').replace(/[:*+?^${}()|[\]\\]/gi, '\\$&')}`;
+      cssClass = `.${element.className
+          .trim()
+          .replace(/\s+/g, '.')
+          .replace(/[:*+?^${}()|[\]\\]/gi, '\\$&')}`;
     }
 
     parents.unshift({
